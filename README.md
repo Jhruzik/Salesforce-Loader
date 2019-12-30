@@ -1,0 +1,2 @@
+# SalesForce-Loader
+SalesForce-Loader is a Tool to update, insert, delete, and query Data within the SalesForce Data Cloud. It can either be used as a CLI tool or within your own scripts. It is primarily designed to deal with bulk data. Hence, only the Bulk API is used. This will keep the necessary amount of API calls to a minimum.

@@ -9,15 +9,15 @@ Also salesforce-loader depends on the following packages:
 
 ## Usage [CLI]
 If you want to use SalesForce-Loader's command line interface, you should download the most recent release. You can simply execute the jar file with some parameters: 
-* -u\t[username: This should be the username you use to access your SalesForce instance.]
-* -p\t[password: The password associated with your account.]
-* -t\t[token: The security token associated with your account.]
-* -o\t[object: The SalesForce object you want to operate on.]
-* -c\t[command: The command you want to execute. Either one of insert, update, delete, or query.]
-* -s\t[size: This is equal to the batch size if you choose to insert, update, or delete. It is equal to the chunk size if you choose to query.]
-* -r\t[result file: The path where the result file will be written to.]
-* -i\t[input file: The path of your input data (only needed for update, delete, and insert commands).]
-* -q\t[query: The SOQL query you would like to execute (only needed for query commands).]
+* -u	[username: This should be the username you use to access your SalesForce instance.]
+* -p	[password: The password associated with your account.]
+* -t	[token: The security token associated with your account.]
+* -o	[object: The SalesForce object you want to operate on.]
+* -c	[command: The command you want to execute. Either one of insert, update, delete, or query.]
+* -s	[size: This is equal to the batch size if you choose to insert, update, or delete. It is equal to the chunk size if you choose to query.]
+* -r	[result file: The path where the result file will be written to.]
+* -i	[input file: The path of your input data (only needed for update, delete, and insert commands).]
+* -q	[query: The SOQL query you would like to execute (only needed for query commands).]
 
 Let's assume that our jar file is located at /home/user/salesforce-loader-0.1.jar. We want to upload some leads in /home/user/lead_upload.csv and save the result under /home/user/result.csv. Our username is "doe@salesforce.com" and our password is "password123". Also, we have generated a security token equal to "token$!123". We decide to use a bulk size of 500. We can start the insert with the following command:
 ```scala /home/user/salesforce-loader-0.1.jar -u doe@salesforce.com -p password123 -t token$!123 -o Lead -c insert -s 500 -r /home/user/result.csv -i /home/user/lead_upload.csv```

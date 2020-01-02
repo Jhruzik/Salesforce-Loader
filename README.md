@@ -24,7 +24,7 @@ Let's assume that our jar file is located at /home/user/salesforce-loader-0.1.ja
 Delete and update commands would look very similiar (the -c argument would be different).
 
 We could also decide to load all ids, first, and last names of our leads to /home/user/leads.csv in batches of 5000:
-```scala /home/user/salesforce-loader-0.1.jar -u doe@salesforce.com -p password123 -t token$!123 -o Lead -c query -s 5000 -r /home/user/account.csv -q "SELECT Id,FirstName,LastName FROM Lead"```
+```scala /home/user/salesforce-loader-0.1.jar -u doe@salesforce.com -p password123 -t token$!123 -o Lead -c query -s 5000 -r /home/user/lead.csv -q "SELECT Id,FirstName,LastName FROM Lead"```
 
 While running, you will get feedback on how many rows have already been processed.
 

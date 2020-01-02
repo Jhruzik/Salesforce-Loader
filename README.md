@@ -29,7 +29,8 @@ We could also decide to load all ids, first, and last names of our leads to /hom
 While running, you will get feedback on how many rows have already been processed.
 
 ## Usage [Script]
-You can also use SalesForce-Loader within your scripts. There is a simple wrapper function for every workload. The wrapper functions can be accessed by running `import com.github.jhruzik.salesforceloader.Loader._`. The following commands will refer to functions within that package.
+You can also use SalesForce-Loader within your scripts. Salesforce-Loader is not hosted on Maven yet, so you'd have to include the jar file to your class path. 
+There is a simple wrapper function for every workload. The wrapper functions are part of the Loader sub-package. Hence we import all functions from that subpackage by using `import com.github.jhruzik.salesforceloader.Loader._`. The following commands will refer to functions within that package.
 
 #### Login
 Every action needs some login information to process data on the SalesForce Data Cloud. You can login and save your login information for later use like so:
@@ -38,7 +39,7 @@ Of course, username, password, and token should correspond to the values relevan
 
 #### Insert
 Assume that you want to insert lead data located at /home/user/lead.csv and that you want to save the results to /home/user/lead_result.csv.
-```ìnsert(login=login_cred, sfobject = "Lead", size = 5000, input_file = "/home/user/lead.csv", ouput_file = "/home/user/lead_result.csv")```
+```insert(login=login_cred, sfobject = "Lead", size = 5000, input_file = "/home/user/lead.csv", output_file = "/home/user/lead_result.csv")```
 
 #### Update
 In this scenario we have some account data we would like to update. The input data is located at /home/user/account_update.csv and the result is to be saved under /home/user/update_result.csv.
@@ -46,7 +47,7 @@ In this scenario we have some account data we would like to update. The input da
 
 #### Delete
 You can also delete data. For example, assume that we would like to delete Cases in /home/user/case_delete.csv and want to save the result under /home/user/delete_result.csv.
-```delete(login = login_cred, sfobject = "Case", size = 5000, input_file = "/home/user/case_delete.csv, output_file = "/home/user/delete_result.csv")```
+```delete(login = login_cred, sfobject = "Case", size = 5000, input_file = "/home/user/case_delete.csv", output_file = "/home/user/delete_result.csv")```
 
 #### Query
 If you would like to execute the SOQL query `SELECT FirstName,LastName FROM Lead` and save the result under /home/user/lead.csv, use the query function.
